@@ -35,3 +35,10 @@ end
           ##trả về false 
   puts "Không có giá trị nào thõa mãn cho tổng cho trước"
   end
+
+  # Chương trình của e đúng yêu cầu chỉ sd 1 vòng lặp là ok rồi ah. A cũng có vài góp ý:
+  # 1. hash = {} #tạo 1 hash rỗng -> mình chỉ nên ghi những comment cho những logic hoặc dụng ý khác khi khai báo, kg nên comment cho những dòng code 
+  # mà ng khác đọc vào có thể hiểu liền
+  # 2. arr là 1 mảng chứa nhiều phần tử nên là số nhiều
+  # 3. if temp==arr[i] then -> dùng if else end chứ kg có then nhé e, và thường có dấu cách nhé (tem==arr[1])
+  # 4. n=arr.length() -> biến chưa rõ nghĩa
