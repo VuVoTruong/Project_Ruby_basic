@@ -102,3 +102,13 @@ end
 puts "kết thúc chương trình #{Time.now}"
 
 #sau khi chạy thì thời gian tạo file là 4.67s , thời gian đọc file là 0.07s và thời gian import là 89.14s 
+
+# A thấy bài tập e đã làm đúng yêu cầu. A thì có vài góp ý
+# 1. Tất cả các hàm thực thi e đang viết chung trong 1 file -> có thể gây khó khăn khi e mở rộng chương trình.
+# VD: file kết nối postgres, file để import data, file để đọc file,... như vậy sau này e dễ dàng chỉnh sửa hơn
+# 2. Khi viết raw sql e cần nhất quán, vd: insert into users e đang viết thường nhưng chữ VALUES e viết hoa
+# 3. A thấy e đang đọc từng dòng và insert từng dòng vào db -> điều này dẫn tới sẽ có tới 500k câu insert được thực hiện
+# -> sẽ nhanh hơn nếu e build câu query đó thành 1 câu insert duy nhất và theo sau là values của nó
+# 4. Với lượng data lớn, e nên chia batch ra để xử lý, vd: xử lý batch 10k 1 lần, tránh trường hợp fetch lên trên RAM để xử lý, nếu data lớn và nhiều 
+# có thể die luôn cái máy
+# 5. 500000 e có thể khai báo là hằng số và có format cho dễ đọc 500_000 -> để có thay đổi e chỉ cần thay đổi hằng số là xong, kg cần scan code để sửa đổi
