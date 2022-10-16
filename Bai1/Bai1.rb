@@ -61,3 +61,28 @@ puts "mảng sau khi được sắp xếp là #{arr1}"
 #xuất ra giá trị nhỏ nhất là phần tử đầu tiên của mảng 
 puts "c3 : giá trị nhỏ nhất của mảng là #{arr1[0]}"
 puts arr.length
+
+# Tổng quát a thấy đoạn code trên cũng khá ok rồi e, có giải theo nhiều cách. 
+# A có 1 số góp ý
+# 1. Chương trình trên khi phần tử lần đầu a nhập là -1 thì sẽ báo lỗi
+#Nhập số phần tử mảng n = (n<99 nhé ). Nhập -1 để dừng chương trình
+#-1
+#Chương trình bị dừng
+#Nhập các phần tử của mảng
+#main.rb:21:in `initialize': negative array size(ArgumentError)
+#	from main.rb:21:in `new'
+#	from main.rb:21:in `<main>'
+#
+# 2. Số 99 là số lặp lại trong mảng nên e có thể để 99 là hằng số
+# 3. Chú ý cách cách đặt tên biến. vd: while n = Integer(gets.chomp) -> n nên được ghi rõ nghĩa hơn là gì để kg cần comment ng đọc vẫn biết được
+# 4. arr=Array.new(n)#khai báo mới 1 mảng arr có n phần tử  -> nếu là biến có chứa nhiều phần tử thì mình nên đặt tên biến là số nhiều
+# 5. arr1 = arr.sort # mảng mới sau khi được sắp xếp -> hạn chế đặt tên biến có số 1, 2, ...
+# 6. Nên chú ý format cho dễ đọc nhé e. bVD:
+#for i in (0...n-1) do  #duyệt mảng từ 0 đến độ dài của mảng
+#    if minimum >= arr[i] # nếu min > giá trị thứ i trong mảng thì sẽ cho min = arr[i]
+#        minimum = arr[i] #duyệt đến hết mảng và tìm dc min
+#end
+#end
+# 7. Chú ý cách dùng dấu 1 nháy ' và hai nháy ". 1 nháy được dùng khi trong dấu ' chỉ chứa string, kg chứa biến. Còn nếu chứa biến thì mình dùng 
+# dấu 2 nháy "
+# 8. Nên có space khi e đặt comment nhé. VD: retry#đặt retry vào trong -> nên có dấu cách giữa retry và #
